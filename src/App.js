@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Home from "./components/Home";
-// import Login from "./components/Login";
+ import Login from "./components/Login";
 import Checkout from "./components/Checkout";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import { auth } from "./firebase";
@@ -42,7 +42,7 @@ function App() {
 			<Router>
 				<Switch>
 					<Route path="/login">
-						{/* <Login /> */}
+						 <Login /> 
 					</Route>
 					<Route path="/payment">
 						<Header />
