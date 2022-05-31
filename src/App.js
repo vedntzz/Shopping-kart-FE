@@ -3,6 +3,8 @@ import "./App.css";
 import Header from "./components/Header";
 import Home from "./components/Home";
  import Login from "./components/Login";
+ import Signin from "./components/Signin";
+
 import Checkout from "./components/Checkout";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import { auth } from "./firebase";
@@ -43,6 +45,9 @@ function App() {
 				<Switch>
 					<Route path="/login">
 						 <Login /> 
+					</Route>
+					<Route path="/signin">
+						 <Signin /> 
 					</Route>
 					<Route path="/payment">
 						<Header />

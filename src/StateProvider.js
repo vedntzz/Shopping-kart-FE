@@ -12,3 +12,4 @@ export const StateProvider = ({ reducer, initialState, children }) => (
 
 //Pull info from data Layer
 export const useStateValue = () => useContext(StateContext);
+ 

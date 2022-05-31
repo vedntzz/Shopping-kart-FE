@@ -1,182 +1,29 @@
-import React from "react";
-import "./Login.css";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import React from 'react'
+import './Login.css';
+import { Link } from "react-router-dom";
 
-const schema = yup.object().shape({
-  firstName: yup.string().required("First Name should be required please"),
-  lastName: yup.string().required(),
-  email: yup.string().email().required(),
-  age: yup.number().positive().integer().required(),
-  password: yup.string().min(4).max(15).required(),
-  confirmPassword: yup.string().oneOf([yup.ref("password"), null]),
-});
+const Login = () => {
+  const handleLogIn = () => {
+    console.log("Youre logged in");
+  }
 
-function Login() {
-  const { register, handleSubmit, errors } = useForm({
-    resolver: yupResolver(schema),
-  });
-
-  const submitForm = (data) => {
-    console.log(data);
-  };
   return (
-    <div className="Form">
-      <div className="title">Sign Up</div>
-      <div className="inputs">
-        <form onSubmit={handleSubmit(submitForm)}>
-          <input
-            type="text"
-            name="firstName"
-            ref={register}
-            placeholder="First Name..."
-          />
-          <p> {errors.firstName?.message} </p>
-          <input
-            type="text"
-            name="lastName"
-            placeholder="Last Name..."
-            ref={register}
-          />
-          <p> {errors.lastName?.message} </p>
-          <input
-            type="text"
-            name="email"
-            placeholder="Email..."
-            ref={register}
-          />
-          <p> {errors.email?.message} </p>
-          <input type="text" name="age" placeholder="Age..." ref={register} />
-          <p> {errors.age?.message} </p>
-          <input
-            type="password"
-            name="password"
-            placeholder="Password..."
-            ref={register}
-          />
-          <p> {errors.password?.message} </p>
-          <input
-            type="password"
-            name="confirmPassword"
-            placeholder="Confirm Password..."
-            ref={register}
-          />
-          <p> {errors.confirmPassword && "Passwords Should Match!"} </p>
-          <input type="submit" id="submit" />
-        </form>
+    <div className='container'>
+      <h1 style={{textAlign: 'center', fontWeight: 'lighter', marginTop: '20px'}}>Login</h1>
+      <div className='loginBox'>
+        <input className='emailInput' placeholder='Email'/>
+        <input className='passInput' placeholder='Password'/>
+        <Link to={"/home"}>
+          <button onClick={handleLogIn} className="loginPageBtn">Log In</button>
+				</Link>
+        <Link to={"/signin"}>
+          <button onClick={handleLogIn} className="loginPageBtn">Sign In</button>
+				</Link>
+        
       </div>
     </div>
-  );
+  )
 }
 
 export default Login;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useState } from "react";
-// import "./Login.css";
-// import { Link, useHistory } from "react-router-dom";
-// import { auth } from "../firebase";
-
-// function Login() {
-// 	const history = useHistory();
-// 	const [email, setEmail] = useState("");
-// 	const [password, setPassword] = useState("");
-
-// 	const signIn = (e) => {
-// 		e.preventDefault();
-// 		//firebase
-// 		auth.signInWithEmailAndPassword(email, password)
-// 			.then((auth) => {
-// 				history.push("/");
-// 			})
-// 			.catch((error) => {
-// 				alert(error.message);
-// 			});
-// 	};
-
-// 	const register = (e) => {
-// 		e.preventDefault();
-// 		//firebase
-// 		auth.createUserWithEmailAndPassword(email, password)
-// 			.then((auth) => {
-// 				console.log(auth);
-// 				if (auth) {
-// 					history.push("/");
-// 				}
-// 			})
-// 			.catch((error) => alert(error.message));
-// 	};
-
-// 	return (
-// 		<div className="login">
-// 			<Link to="/">
-// 				<img
-// 					className="login__logo"
-// 					src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-// 				/>
-// 			</Link>
-// 			<div className="login__container">
-// 				<h1>Sign In</h1>
-// 				<form>
-// 					<h5>Email</h5>
-// 					<input
-// 						type="text"
-// 						value={email}
-// 						onChange={(e) => setEmail(e.target.value)}
-// 					/>
-// 					<h5>Password</h5>
-// 					<input
-// 						type="password"
-// 						value={password}
-// 						onChange={(e) => setPassword(e.target.value)}
-// 					/>
-// 					<button
-// 						type="submit"
-// 						onClick={signIn}
-// 						className="login__signinbutton"
-// 					>
-// 						Sign In
-// 					</button>
-// 				</form>
-// 				<p>By signing in you agree our terms and conditions!</p>
-// 				<button
-// 					type="submit"
-// 					onClick={register}
-// 					className="login__registerbutton"
-// 				>
-// 					Create an Account
-// 				</button>
-// 			</div>
-// 		</div>
-// 	);
-// }
-
-
-
+  
