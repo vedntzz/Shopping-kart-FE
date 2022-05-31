@@ -30,6 +30,7 @@ function Checkout() {
 					<Subtotal />
 				</div>
 			</div>
+	
 		</div>
 	);
 }

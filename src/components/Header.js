@@ -14,7 +14,7 @@ function Header() {
 			<Link to="/">
 				<img
 					className="header__logo"
-					src="../logo.png"
+					src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
 					alt="e shopping cart"
 				/>
 			</Link>

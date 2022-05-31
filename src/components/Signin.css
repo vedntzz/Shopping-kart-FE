@@ -10,16 +10,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid gray;
-    width: 25%;
+    border: 1px solid  rgb(174, 178, 199);
+    width: 55%;
     margin: auto;
     margin-top: 50px;
-    background-color: orange;
+    background-color: rgb(174, 178, 199);
 }
 header{
-    font-size: 40px;
+    font-size: 50px;
     margin-bottom: 60px;
-    font-family: 'Times New Roman', Times, serif;
+    textAlign: 'center';
+     fontWeight: 'heavy';
+     marginTop: '20px' ;
 }
 .input-field, form .button{
     margin: 25px 0;
@@ -29,29 +31,21 @@ header{
 }
 
 .input-field {
-    margin-top: 100px;
+    margin-top: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 .input-field input{
-    /* margin: 14px;
-    padding: 5px 5px;
-    align-items: center;
-    height: 70%;
-    width: 70%;
-    border: 1px solid silver;
-    outline: none;
-    font-size: 15px;
-    transition: .4s; */
+
     padding: 10px;
     margin-top: 30px;
     width: 300px;
     border: 1px solid gray;
     outline: none;
 }
-form .button{
+/* form .button{
     padding: 5px 5px;
     margin-top: 340px;
     overflow: hidden;
@@ -63,19 +57,39 @@ form .button{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
+} */
 
-.button button{
-    width: 50%;
-    height: 100%;
-    color: red;
+/* .button button{
+    width: 100%;
+    height: 78%;
+    color: rgb(10, 10, 10);
     font-size: 20px;
     cursor: pointer;
     font-family: sans-serif;
-}
+} */
 #user{
     color: brown;
 }
 #pass{
     color: brown;
 }
+.LoginLogo{
+	display: flex;
+	width: 200px;
+	object-fit: contain;
+	/* margin-top: 35px; */
+ } 
+
+ .signInPageBtn {
+    margin-top: 250px;
+    margin-bottom: 20px;
+    display: flex;
+    padding: 10px;
+    background-color: #c7d889;
+ }
+ .signInForm {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+ }
