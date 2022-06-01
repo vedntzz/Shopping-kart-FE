@@ -6,6 +6,11 @@ function Home() {
 	return (
 		<div className="home">
 			<div className="home__container">
+			<img
+					className="home__image"
+					src="https://cdn.printnetwork.com/production/assets/5966561450122033bd4456f8/imageLocker/blog-description/blog/sales_banners.jpg"
+					alt="bg"
+				/>
 			<div className="home__row">
 					<Product
 						id="3"

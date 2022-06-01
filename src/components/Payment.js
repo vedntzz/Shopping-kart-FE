@@ -170,6 +170,7 @@ function Payment() {
   }}
 />
 <button className="CODBtn">COD</button>
+
 				</div>
 
 			</div>

@@ -7,7 +7,7 @@ const Login = () => {
   const handleLogIn = () => {
     console.log("Youre logged in");
   }
-
+//login as admin //link to admin page ........
   return (
     <div className='container'>
       <h1 style={{textAlign: 'center', fontWeight: 'heavy', marginTop: '10px'}}>Login</h1>
