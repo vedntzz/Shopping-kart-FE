@@ -7,7 +7,6 @@ import Home from "./components/Home";
 
 import Checkout from "./components/Checkout";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
 import Payment from "./components/Payment";
 import { loadStripe } from "@stripe/stripe-js";
@@ -18,27 +17,6 @@ function App() {
 		"pk_test_51HU6cMIVz8lPHGxtTgh5fYH2shdaFXbKoCnRexWPTHqPPYzFmmznGSPmav8IvB4DTZgankavtpzzh6b35Hnn4jXq00osBWTWXM"
 	);
 	const [{}, dispatch] = useStateValue();
-
-	// useEffect(() => {
-	// 	//once when loads
-	// 	auth.onAuthStateChanged((authUser) => {
-	// 		console.log(authUser);
-	// 		if (authUser) {
-	// 			//logged in
-	// 			dispatch({
-	// 				type: "SET_USER",
-	// 				user: authUser,
-	// 			});
-	// 		} else {
-	// 			//logged out
-	// 			dispatch({
-	// 				type: "SET_USER",
-	// 				user: null,
-	// 			});
-	// 		}
-	// 	});
-	// }, []);
-
 	return (
 		<div className="App">
 			<Router>

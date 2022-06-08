@@ -11,58 +11,6 @@ import GooglePayButton from '@google-pay/button-react'
 
 function Payment() {
 	const [{ basket, user }, dispatch] = useStateValue();
-
-	const history = useHistory();
-
-	const stripe = useStripe();
-	const elements = useElements();
-
-	const [error, setError] = useState(null);
-	const [processing, setProcessing] = useState("");
-	const [succeeded, setSecceeded] = useState(false);
-	const [disabled, setDisabled] = useState(true);
-	const [clientSecret, setClientSecret] = useState(true);
-
-	// useEffect(() => {
-	// 	const getClientSecret = async () => {
-	// 		const response = await axios({
-	// 			method: "post",
-	// 			url: `/payments/create?total=${getBasketTotal(basket) * 60}`,
-	// 		});
-	// 		setClientSecret(response.data.clientSecret);
-	// 	};
-	// 	getClientSecret();
-	// }, [basket]);
-
-	// const handleSubmit = async (event) => {
-	// 	event.preventDefault();
-	// 	setProcessing(true);
-
-	// 	const payload = await stripe
-	// 		.confirmCardPayment(clientSecret, {
-	// 			payment_method: {
-	// 				card: elements.getElement(CardElement),
-	// 			},
-	// 		})
-	// 		.then(({ paymentIntent }) => {
-	// 			//payment intent = payment confirmation
-	// 			setSecceeded(true);
-	// 			setError(null);
-	// 			setProcessing(false);
-
-	// 			history.replace("/orders");
-	// 		});
-	// };
-
-	const handleSubmit = () => {
-		console.log("submitted")
-	}
-
-	const handleChange = (event) => {
-		setDisabled(event.empty);
-		setError(event.error ? event.error.message : "");
-	};
-
 	return (
 		<div className="payment">
 			<div className="payment__container">
@@ -76,9 +24,6 @@ function Payment() {
 					</div>
 					<div className="payment__address">
 						<p>{user?.email}</p>
-						{/* <p>G-81 , Apex Royal Castle</p> */}
-						{/* <p>Indirapuram , Ghaziabad ,UP, India</p> */}
-						{/*Address*/}
 						<input className="addressInput"/>
 					</div>
 				</div>
@@ -97,40 +42,6 @@ function Payment() {
 						))}
 					</div>
 				</div>
-				{/* <div className="payment__section">
-					
-					<div className="payment__title">Payment Details</div>
-					<div className="payment__details">
-						
-						<form onSubmit={handleSubmit}>
-							<CardElement onChange={handleChange} />
-							<div className="payment__priceContainer">
-								<CurrencyFormat
-									renderText={(value) => (
-										<p>
-											Price to be Paid :
-											<strong>{`${value}`}</strong>
-										</p>
-									)}
-									decimalScale={2}
-									value={getBasketTotal(basket)}
-									displayType={"text"}
-									thousandSeparator={true}
-									prefix={" ₹ "}
-								/>
-							</div>
-							<button
-								disabled={processing || disabled || succeeded}
-							>
-								<span>
-									{processing ? <p>Processing</p> : "Buy Now"}
-								</span>
-							</button>
-						</form>
-					</div>
-					
-					{error && <div>{error}</div>}
-				</div> */}
 				<div className="paymentBtns">
 				<GooglePayButton
   environment="TEST"

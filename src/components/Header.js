@@ -11,7 +11,7 @@ function Header() {
 
 	return (
 		<div className="header">
-			<Link to="/">
+			<Link to="/">      
 				<img
 					className="header__logo"
 					src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
@@ -27,7 +27,7 @@ function Header() {
 				<Link to={!user && "/login"}>
 					<div className="header__option">
 						<span className="header__optionLineOne">
-							Hello {user ? user.email : "Guest"}
+							 {user ? user.email : "Hy customer"}
 						</span>
 						<span
 							// onClick={handleAuth}
